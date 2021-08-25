@@ -1,9 +1,9 @@
 const net = require("net");
-
+const { IP, PORT } = require("./constants");
 const connect = function () {
   const conn = net.createConnection({
-    host: '135.23.223.133',
-    port: 50542
+    host: IP,
+    port: PORT
   });
   conn.setEncoding("utf8");
   conn.on("data", (data)=> {
@@ -12,7 +12,6 @@ const connect = function () {
   conn.on("connect", ()=> {
     console.log("Successfully connected to game server");
     conn.write('Name: PSS');
-    conn.write('Say: HeyThere');
     //conn.write('Move: up');
   });
   return conn;
