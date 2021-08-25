@@ -15,6 +15,12 @@ const handleUserInput = function(key) {
   if (key === 'd') {
     connection.write('Move: right');
   }
+  if (key === 'q') {
+    connection.write('Say: What a nice day');
+  }
+  if (key === 'z') {
+    connection.write('Say: So many snakes around');
+  }
   //process.stdout.write('.');
 };
 const setupInput = function(conn) {
